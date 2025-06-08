@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maths Quiz</title>
+</head>
+<body>
+    <h1>Maths Quiz</h1>
+    <form id="quizForm">
+        <label for="question1">What is 21 squared?</label><br>
+        <input type="text" id="question1" name="question1"><br><br>
+
+        <label for="question2">What is 12 squared?</label><br>
+        <input type="text" id="question2" name="question2"><br><br>
+
+        <input type="button" value="Submit" onclick="checkAnswers()">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function checkAnswers() {
+            var q1 = document.getElementById('question1').value;
+            var q2 = document.getElementById('question2').value;
+            var result = document.getElementById('result');
+
+            var correctAnswers = 0;
+
+            if (q1 == 21*21) {
+                correctAnswers++;
+            }
+
+            if (q2 == 12*12) {
+                correctAnswers++;
+            }
+
+            if (correctAnswers == 2) {
+                result.innerHTML = "Dude, it's very hard, bro. You got ß2 out of 2 correct.";
+            } else {
+                result.innerHTML = "Dude, it's very hard, bro. You got " + correctAnswers + " out of 2 correct.";
+            }
+        }
+    </script>
+</body>
+</html>
